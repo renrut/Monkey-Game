@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 5cfa7ab147677fa4cba020c56edba0d2
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - waterLevel: {fileID: 100000, guid: f5c44c8193e4f6d4690ff7c72f7873f9, type: 2}
+  - rainBurst: {fileID: 100000, guid: cd300db7b5fcb244985a4dbf914ca0f9, type: 2}
+  - rainSplash: {fileID: 100000, guid: e01dd4eebfc1ad142b8813ff762b1487, type: 2}
+  - score: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
