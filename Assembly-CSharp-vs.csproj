@@ -52,8 +52,8 @@
      <Compile Include="Assets\Scripts\ScoreCount.cs" />
      <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
      <Compile Include="Assets\Scripts\WaterLevel.cs" />
+     <Compile Include="Assets\Scripts\monkeyController.cs" />
      <Compile Include="Assets\Scripts\startRain.cs" />
-     <Compile Include="Assets\monkeyController.cs" />
      <None Include="Assets\Fonts\lorre\Font License.txt.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
