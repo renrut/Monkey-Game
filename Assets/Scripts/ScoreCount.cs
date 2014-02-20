@@ -30,6 +30,7 @@ public class ScoreCount : MonoBehaviour {
 		scoreText.text = count.ToString();
 	}
 	public void newHighscore(){
+		highScore = PlayerPrefs.GetInt("Highscore", 0);
 		if(count > highScore){
 			PlayerPrefs.SetInt("Highscore", count);
 		}

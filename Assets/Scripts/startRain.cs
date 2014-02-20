@@ -15,6 +15,8 @@ public class startRain : MonoBehaviour {
 	public float numDropsToHit;
 	private float numDropsHit;
 
+	
+	
 	//the range of random x-values to be generated
 	public float randomSize;
 
@@ -35,6 +37,8 @@ public class startRain : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+	
+
 		//Once the mouse is clicked, start the game
 		//TODO change this to clicking a menu start button
 		if(started){
@@ -71,6 +75,7 @@ public class startRain : MonoBehaviour {
 		numDropsHit = 0;
 		GameObject.FindGameObjectWithTag("monkey").GetComponent<monkeyController>().killMonkey();
 		Instantiate (gameMenu);
+
 
 	}
 }
