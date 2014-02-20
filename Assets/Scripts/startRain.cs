@@ -74,6 +74,7 @@ public class startRain : MonoBehaviour {
 		started = false;
 		numDropsHit = 0;
 		GameObject.FindGameObjectWithTag("monkey").GetComponent<monkeyController>().killMonkey();
+
 		Instantiate (gameMenu);
 
 
