@@ -7,6 +7,8 @@ public class ScoreCount : MonoBehaviour {
 	public MeshRenderer textRenderer;
 	public TextMesh scoreText;
 	public int highScore;
+
+	public bool scoreIsNew;
 	//set the score text to the very front
 
 	// Use this for initialization
@@ -14,6 +16,7 @@ public class ScoreCount : MonoBehaviour {
 		textRenderer.sortingLayerName = "score";
 		scoreText.text = count.ToString();
 		highScore = PlayerPrefs.GetInt("Highscore", 0);
+		scoreIsNew = false;
 	}
 	
 	// Update is called once per frame
@@ -33,6 +36,7 @@ public class ScoreCount : MonoBehaviour {
 		highScore = PlayerPrefs.GetInt("Highscore", 0);
 		if(count > highScore){
 			PlayerPrefs.SetInt("Highscore", count);
+			scoreIsNew = true;
 		}
 	}
 }
