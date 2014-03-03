@@ -32,34 +32,35 @@ public class RaindropFall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//check if tapped
-		if(Input.touchCount > 0){
-			//only one touch input at a time, so choose the first one
-			Touch touch = Input.GetTouch(0);
+		if(!rainfall.firstStart){
+			if(Input.touchCount > 0){
+				//only one touch input at a time, so choose the first one
+				Touch touch = Input.GetTouch(0);
 
-			//find the world point that was touched 
-			Vector3 wp = Camera.main.ScreenToWorldPoint(touch.position);
-			//convert this to a 2d vector
-			Vector2 touchPos = new Vector2(wp.x, wp.y);
+				//find the world point that was touched 
+				Vector3 wp = Camera.main.ScreenToWorldPoint(touch.position);
+				//convert this to a 2d vector
+				Vector2 touchPos = new Vector2(wp.x, wp.y);
 
-			//if the touch point overlapped with our collider
-			if (collider2D == Physics2D.OverlapPoint (touchPos)){
-				//find the score object in the hierarchy and update it
-				GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreUpdate();
-				//replace this object with a rainBurst
-				Instantiate (rainBurst, transform.position,transform.rotation);
-				Destroy (this.gameObject);
+				//if the touch point overlapped with our collider
+				if (collider2D == Physics2D.OverlapPoint (touchPos)){
+					//find the score object in the hierarchy and update it
+					GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreUpdate();
+					//replace this object with a rainBurst
+					Instantiate (rainBurst, transform.position,transform.rotation);
+					Destroy (this.gameObject);
+				}
+			}
+
+			if(Input.GetMouseButtonDown(0)){
+					//find the score object in the hierarchy and update it
+					GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreUpdate();
+					//replace this object with a rainBurst
+					Instantiate (rainBurst, transform.position,transform.rotation);
+					Destroy (this.gameObject);
+					
 			}
 		}
-
-		if(Input.GetMouseButtonDown(0)){
-				//find the score object in the hierarchy and update it
-				GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreUpdate();
-				//replace this object with a rainBurst
-				Instantiate (rainBurst, transform.position,transform.rotation);
-				Destroy (this.gameObject);
-
-		}
-
 		//change droppng sprite
 		//I don't like the tutorial's implementation of this. it works for the falling rain,
 		//but not for the burst or splash
@@ -77,15 +78,19 @@ public class RaindropFall : MonoBehaviour {
 		Vector3 target = new Vector3 (transform.position.x, -10 ,0);
 		transform.position = Vector3.Lerp(transform.position, target,
 		                                  Time.deltaTime * dropSpeed);
-
-		if(!rainfall.started){
+		
+		if(!rainfall.started && !rainfall.firstStart){
 			Destroy (this.gameObject);
 		}
 	}
 
 	void OnCollisionStay2D( Collision2D other){
 		//don't want rain colliding with other rain
-		if(other.gameObject.tag == "waterlevel"){
+		if(rainfall.firstStart && other.gameObject.tag == "waterlevel"){
+			Instantiate (rainSplash, transform.position, transform.rotation);
+			Destroy (this.gameObject);
+		}
+		if(!rainfall.firstStart && other.gameObject.tag == "waterlevel"){
 			//lose
 			rainfall.checkForEndGame();
 			//replace this object with a rainsplash for OOP style

@@ -15,6 +15,7 @@ public class startRain : MonoBehaviour {
 	public float numDropsToHit;
 	private float numDropsHit;
 
+	public bool firstStart;
 	
 	
 	//the range of random x-values to be generated
@@ -31,6 +32,7 @@ public class startRain : MonoBehaviour {
 	void Start () {
 		started = false;
 		numDropsHit = 0;
+		firstStart = true;
 	}
 
 
@@ -39,9 +41,10 @@ public class startRain : MonoBehaviour {
 	void Update () {
 	
 
+
 		//Once the mouse is clicked, start the game
 		//TODO change this to clicking a menu start button
-		if(started){
+		if(started || firstStart){
 			//increment rainTimer every frame until it hits framesPerRain, then create a raindrop
 			rainTimer++;
 			if(rainTimer == framesPerRain){
@@ -61,6 +64,15 @@ public class startRain : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreReset();
 		GameObject.FindGameObjectWithTag("waterlevel").GetComponent<WaterLevel>().reset();
 		started = true;
+		if(firstStart){
+			Destroy (GameObject.FindGameObjectWithTag("title"));
+			Object[] rain = GameObject.FindGameObjectsWithTag("rain");
+			for(int i = 0; i < rain.Length; ++i){
+				Destroy(rain[i]);
+			}
+			Destroy (GameObject.FindGameObjectWithTag("rateup"));
+			firstStart = false;
+		}
 	}
 
 	public void checkForEndGame(){
@@ -74,10 +86,16 @@ public class startRain : MonoBehaviour {
 		started = false;
 		numDropsHit = 0;
 		GameObject.FindGameObjectWithTag("monkey").GetComponent<monkeyController>().killMonkey();
+		GameObject menu = Instantiate (gameMenu) as GameObject;
+		menu.SetActive(false);
+		StartCoroutine(showMenu(menu));
 
-		Instantiate (gameMenu);
 
 
+	}
+	IEnumerator showMenu(GameObject menu){
+		yield return new WaitForSeconds(.70f);
+		menu.SetActive(true);
 	}
 }
 

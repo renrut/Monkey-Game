@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Playbutton.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Playbutton.cs" Line="70" Column="4" />
+      <File FileName="Assets\Scripts\RaindropFall.cs" Line="55" Column="4" />
+      <File FileName="Assets\Scripts\Raindeath.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\startRain.cs" Line="73" Column="53" />
+      <File FileName="Assets\Scripts\monkeyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScoreDisplay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WaterLevel.cs" Line="12" Column="86" />
+      <File FileName="Assets\Scripts\RateButton.cs" Line="65" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
