@@ -52,10 +52,14 @@
      <Compile Include="Assets\Scripts\RateButton.cs" />
      <Compile Include="Assets\Scripts\ScoreCount.cs" />
      <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
-     <Compile Include="Assets\Scripts\Title.cs" />
      <Compile Include="Assets\Scripts\WaterLevel.cs" />
      <Compile Include="Assets\Scripts\monkeyController.cs" />
      <Compile Include="Assets\Scripts\startRain.cs" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{CF94B908-F3C5-23C6-1986-728C91166A82}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

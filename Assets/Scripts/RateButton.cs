@@ -38,6 +38,7 @@ public class RateButton : MonoBehaviour {
 				if (collider2D == Physics2D.OverlapPoint (touchPos)){
 					//Application.OpenURL(our application url);
 					#if UNITY_ANDROID
+						//Application.OpenURL("http://play.google.com/store/apps/details?id=com.murner.rainymonkey
 						Application.OpenURL("http://play.google.com");
 					#endif
 
@@ -47,7 +48,7 @@ public class RateButton : MonoBehaviour {
 				}
 			}
 		}
-		if(Input.GetButtonDown("Fire1")){
+		/*if(Input.GetButtonDown("Fire1")){
 			GameObject.FindGameObjectWithTag("rateup").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.FindGameObjectWithTag("ratedown").GetComponent<SpriteRenderer>().enabled = true;
 
@@ -65,6 +66,6 @@ public class RateButton : MonoBehaviour {
 				Application.OpenURL("http://google.com");
 				
 			}
-		}
+		}*/
 	}
 }

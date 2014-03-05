@@ -71,6 +71,7 @@ public class startRain : MonoBehaviour {
 				Destroy(rain[i]);
 			}
 			Destroy (GameObject.FindGameObjectWithTag("rateup"));
+			GameObject.FindGameObjectWithTag("score").renderer.enabled = true;
 			firstStart = false;
 		}
 	}
