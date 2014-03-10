@@ -34,6 +34,7 @@ public class Raindeath : MonoBehaviour {
 			index++;
 			//delete the object once all the sprites have passed
 			if(index == deathSprites.Length - 1){
+				audio.Play();
 				Destroy (this.gameObject);
 			}
 			//restart frameTimer for next sprite change

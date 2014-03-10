@@ -52,14 +52,14 @@ public class RaindropFall : MonoBehaviour {
 				}
 			}
 
-			/*if(Input.GetMouseButtonDown(0)){
+			if(Input.GetMouseButtonDown(0)){
 					//find the score object in the hierarchy and update it
 					GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreUpdate();
 					//replace this object with a rainBurst
 					Instantiate (rainBurst, transform.position,transform.rotation);
 					Destroy (this.gameObject);
 					
-			}*/
+			}
 		}
 		//change droppng sprite
 		//I don't like the tutorial's implementation of this. it works for the falling rain,

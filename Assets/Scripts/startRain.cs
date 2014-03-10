@@ -33,6 +33,7 @@ public class startRain : MonoBehaviour {
 		started = false;
 		numDropsHit = 0;
 		firstStart = true;
+
 	}
 
 
@@ -89,6 +90,7 @@ public class startRain : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("monkey").GetComponent<monkeyController>().killMonkey();
 		GameObject menu = Instantiate (gameMenu) as GameObject;
 		menu.SetActive(false);
+		menu.audio.Play();
 		StartCoroutine(showMenu(menu));
 
 

@@ -48,7 +48,7 @@ public class Playbutton : MonoBehaviour {
 
 	
 
-		/*if(Input.GetButtonDown("Fire1")){
+		if(Input.GetButtonDown("Fire1")){
 			GameObject.FindGameObjectWithTag("startup").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.FindGameObjectWithTag("startdown").GetComponent<SpriteRenderer>().enabled = true;
 
@@ -67,6 +67,6 @@ public class Playbutton : MonoBehaviour {
 				Destroy (this.gameObject);
 				
 			}
-		}*/
+		}
 	}
 }
