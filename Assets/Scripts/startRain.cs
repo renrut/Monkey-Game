@@ -90,7 +90,7 @@ public class startRain : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("monkey").GetComponent<monkeyController>().killMonkey();
 		GameObject menu = Instantiate (gameMenu) as GameObject;
 		menu.SetActive(false);
-		menu.audio.Play();
+		//menu.audio.Play();
 		StartCoroutine(showMenu(menu));
 
 
