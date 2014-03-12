@@ -38,17 +38,15 @@ public class Playbutton : MonoBehaviour {
 			
 				//if the touch point overlapped with our collider
 				if (collider2D == Physics2D.OverlapPoint (touchPos)){
-					//find the score object in the hierarchy and update it
 					GameObject.FindGameObjectWithTag("rainfall").GetComponent<startRain>().startGame();
-					Destroy (this.gameObject);
-			}
+				}
 			}
 		}
 
 
 	
 
-		if(Input.GetButtonDown("Fire1")){
+		/*if(Input.GetButtonDown("Fire1")){
 			GameObject.FindGameObjectWithTag("startup").GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.FindGameObjectWithTag("startdown").GetComponent<SpriteRenderer>().enabled = true;
 
@@ -67,6 +65,6 @@ public class Playbutton : MonoBehaviour {
 				Destroy (this.gameObject);
 				
 			}
-		}
+		}*/
 	}
 }

@@ -12,6 +12,8 @@ public class startRain : MonoBehaviour {
 	//the prefab to be instantiated
 	public Rigidbody2D raindrop;
 	public GameObject gameMenu;
+	public GameObject instructions;
+
 	public float numDropsToHit;
 	private float numDropsHit;
 
@@ -44,7 +46,6 @@ public class startRain : MonoBehaviour {
 
 
 		//Once the mouse is clicked, start the game
-		//TODO change this to clicking a menu start button
 		if(started || firstStart){
 			//increment rainTimer every frame until it hits framesPerRain, then create a raindrop
 			rainTimer++;
@@ -61,9 +62,15 @@ public class startRain : MonoBehaviour {
 		}
 	}
 	public void startGame(){
+		
+		if(PlayerPrefs.GetInt("Instructions", 0) == 0){
+			PlayerPrefs.SetInt("Instructions", 1);
+			Application.LoadLevel(1);
+		}
 		GameObject.FindGameObjectWithTag("monkey").GetComponent<monkeyController>().resetMonkey();
 		GameObject.FindGameObjectWithTag("score").GetComponent<ScoreCount>().ScoreReset();
 		GameObject.FindGameObjectWithTag("waterlevel").GetComponent<WaterLevel>().reset();
+		Destroy (GameObject.FindGameObjectWithTag("menu").gameObject);
 		started = true;
 		if(firstStart){
 			Destroy (GameObject.FindGameObjectWithTag("title"));
