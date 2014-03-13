@@ -43,7 +43,7 @@ public class RateButton : MonoBehaviour {
 					#endif
 
 					#if UNITY_IPHONE
-						Application.openURL("http://store.apple.com");
+						//Application.openURL("http://store.apple.com");
 					#endif
 				}
 			}
