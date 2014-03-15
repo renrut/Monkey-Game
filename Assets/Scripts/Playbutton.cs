@@ -7,6 +7,7 @@ public class Playbutton : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Physics2D.IgnoreLayerCollision(gameObject.layer, raindrop.gameObject.layer);
+		GoogleMobileAdsPlugin.CreateBannerView ("pub-4848628447185232",GoogleMobileAdsPlugin.AdSize.SmartBanner, true);
 	}
 	
 	// Update is called once per frame
@@ -38,6 +39,7 @@ public class Playbutton : MonoBehaviour {
 			
 				//if the touch point overlapped with our collider
 				if (collider2D == Physics2D.OverlapPoint (touchPos)){
+					GoogleMobileAdsPlugin.HideBannerView();
 					GameObject.FindGameObjectWithTag("rainfall").GetComponent<startRain>().startGame();
 				}
 			}
